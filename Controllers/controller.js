@@ -1,11 +1,25 @@
 import bcrypt from "bcryptjs";
-import { User } from "../Models/schema.js";
+import { Url, User } from "../Models/schema.js";
 import nodemailer from 'nodemailer';
 import crypto from'crypto';
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+ 
 
 dotenv.config();
+
+export const urlShort=async(req,res)=>{
+    try {
+        const{url}=req.body;
+        const newUrl=new Url({url});
+        await newUrl.save();
+        res.status(200).json({message:"Url shortened successfully",result:newUrl})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message:'Url shortening failed internal server error'})
+    }
+}
+
 
 export const registerUser=async(req,res)=>{
     try {
