@@ -21,7 +21,6 @@ app.get("/",(req,res)=>{
 <p><strong>/register:</strong> Create a new user account.</p>
 <p><strong>/login:</strong> Log in to an existing user account.</p>
 <p><strong>/forgot-password:</strong> Reset your password if forgotten.</p>
-<p><strong>/get-user:</strong> Retrieve user details if authenticated.</p>
 <p><strong>/shortUrls:</strong> Shorten a given URL.</p>
 <p>This is the main endpoint of our Node.js application for day 5 tasks, providing information about user account-related functionalities and URL shortening.</p>
 
